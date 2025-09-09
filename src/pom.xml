@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring_kadai_todo</artifactId>
+	<artifactId>spring_kadai_form</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring_kadai_todo</name>
+	<name>spring_kadai_form</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -36,10 +36,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
@@ -49,10 +45,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.thymeleaf.extras</groupId>
-			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
 		</dependency>
 
 		<dependency>
@@ -74,11 +66,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
