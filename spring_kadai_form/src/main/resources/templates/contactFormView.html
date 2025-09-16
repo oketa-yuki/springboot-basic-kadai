@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>お問い合わせフォーム</title>
+  <style>
+    body { font-family: sans-serif; }
+    h2 { font-size: 20px; margin-bottom: 15px; }
+    table { border-collapse: collapse; }
+    /* ← ラベルを1行固定＆幅を確保 */
+    td.label { width: 160px; white-space: nowrap; vertical-align: top; padding: 5px; }
+    td.input { padding: 5px; }
+    input[type="text"], textarea { width: 100%; padding: 4px; }
+    textarea { height: 80px; } /* 入力欄は複数行のまま */
+    .error { color: red; font-size: 14px; }
+    button { margin-top: 10px; padding: 5px 15px; }
+  </style>
+</head>
+<body>
+<h2>お問い合わせフォーム</h2>
+
+<form th:action="@{/confirm}" th:object="${contactForm}" method="post">
+  <table>
+    <tr>
+      <td class="label"><label for="name">お名前</label></td>
+      <td class="input">
+        <input type="text" th:field="*{name}" id="name"/>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><label for="email">メールアドレス</label></td>
+      <td class="input">
+        <input type="text" th:field="*{email}" id="email"/>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
+      </td>
+    </tr>
+    <tr>
+      <!-- ラベル “お問い合わせ内容” を1行固定 -->
+      <td class="label"><label for="message">お問い合わせ内容</label></td>
+      <td class="input">
+        <textarea th:field="*{message}" id="message"></textarea>
+        <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="error"></div>
+      </td>
+    </tr>
+  </table>
+  <button type="submit">送信</button>
+</form>
+
+</body>
+</html>
